@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import OAuth from '../Components/OAuth';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -62,16 +63,24 @@ export default function SignIn() {
               <p>
                 <Link to="/forgot-password" className='text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out ml-1'>Forgot Password?</Link>
               </p>
-            </div>        
-          </form>
-          <button 
+            </div>
+            <button 
             type='submit'
             className='w-full bg-blue-600 text-white 
             px-7 py-3 text-sm font-medium uppercase
-            rounded shadow-md hover:bg-blue-700 transition duration-150'
-          >
+            rounded shadow-md hover:bg-blue-700 transition duration-150 
+            ease-in-out hover:shadow-lg active:bg-blue-800'
+            >
             Sign In
-          </button>
+            </button>
+            <div className=" flex items-center my-4 before:border-t before:flex-1 before:border-gray-300 after:border-t after:flex-1 after:border-gray-300"          
+            >
+              <p className="text-center font-semibold mx-4">
+                OR
+              </p>
+            </div>
+              <OAuth />   
+          </form>
         </div>
       </div>
     </section>
